@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://rickandmortyapi.com/api'
+  apiUrl: 'https://rickandmortyapi.com/api',
+  apiUrlTwoo: 'https://futuramaapi.com/api'
 };
 
 /*

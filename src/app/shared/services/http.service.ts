@@ -83,13 +83,14 @@ export class HttpService {
   getEpisodes(){
     return this.httpService.get<any>(`${this.myUrl}/episode`).pipe(
       map((res)=> {
-        const episodes = res.results.map(({id, name, air_date, episode, characters}: Episodes)=>{
+        const episodes = res.results.map(({id, name, air_date, episode, characters, url}: Episodes)=>{
           return {
             id: id,
             name: name,
             air_date: air_date,
             episode: episode,
-            characters: characters
+            characters: characters,
+            url: url
           }
         })
         return episodes;
@@ -107,7 +108,8 @@ export class HttpService {
           name: res.name,
           air_date: res.air_date,
           episode: res.episode,
-          characters: res.characters
+          characters: res.characters,
+          url: res.url
         }
         return data;
       }),
@@ -115,5 +117,26 @@ export class HttpService {
         throw 'error en la peticion: ' + err;
       })
     );
+  }
+
+  getCharacters(){
+    return this.httpService.get<any>(`${this.myUrl}/character`).pipe(
+      map((res: any)=> {
+
+        const data = res.results.map(({name, status, species, image}: Personaje)=>{
+          return {
+            name: name,
+            status: status,
+            species: species,
+            image: image
+          }
+        })
+        // console.log(res);
+        return data;
+      }),
+      catchError(err => {
+        throw 'error in source. Details: ' + err;
+      })
+    )
   }
 }

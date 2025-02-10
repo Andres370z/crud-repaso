@@ -1,1 +1,23 @@
-<p>cart-info works!</p>
+<div class="container">
+    <h3 class="text-center mt-3">My Episodes</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Username" aria-label="Ingresa un nombre"
+                    aria-describedby="basic-addon1" (input)="filter($event)">
+            </div>
+        </div>
+        <div class="col-4 col-md-4 mt-4" *ngFor="let episode of episodes">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"> {{episode.name}} </h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary"> {{episode.id}} </h6>
+                    <p class="card-text">Emitido por primera vez: {{episode.air_date}} </p>
+                    <p class="card-text">Emitido por primera vez: {{episode.episode}} </p>
+                    <p class="text-center">Episodio:</p>
+                    <a href="#" class="card-link" target="_blank">{{episode.url}} </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
