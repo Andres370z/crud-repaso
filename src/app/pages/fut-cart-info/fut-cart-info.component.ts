@@ -8,7 +8,10 @@ import { FuturamaCharacters } from 'src/app/interfacesTwo/personajes';
 })
 export class FutCartInfoComponent implements OnInit {
 
-  @Input() character!: FuturamaCharacters | undefined
+  @Input() publicaciones: any | undefined  
+
+  
+
   constructor() { }
   
   ngOnInit(): void {

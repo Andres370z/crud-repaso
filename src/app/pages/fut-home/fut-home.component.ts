@@ -9,6 +9,8 @@ import { ApiconectionService } from 'src/app/shared/services/apiconection.servic
 })
 export class FutHomeComponent implements OnInit {
   characters: FuturamaCharacters[] | any;
+  publicaciones: any;
+  publicacionesTwoo: any;
   charactersTwoo: FuturamaCharacters[] | any;
 
   constructor(
@@ -16,7 +18,8 @@ export class FutHomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getCharacters();
+    //this.getCharacters();
+    this.getDataUsers();
   }
 
   getCharacters() {
@@ -34,6 +37,21 @@ export class FutHomeComponent implements OnInit {
 
     console.log(search);
     
+  }
+
+  getPersonajes(){
+    this.httpService.getPersonajes().subscribe((res: any)=>{
+      console.log('Esta es tu respusta ', res);
+      
+    })
+  }
+
+  getDataUsers(){
+    this.httpService.getPublicaciones().subscribe((res: any)=>{
+      console.log('-----> ', res);
+      this.publicaciones = res;
+      this.publicacionesTwoo = res;
+    })
   }
 
 }

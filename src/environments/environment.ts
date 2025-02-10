@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   apiUrl: 'https://rickandmortyapi.com/api',
-  apiUrlTwoo: 'https://futuramaapi.com/api'
+  apiUrlTwoo: 'https://futuramaapi.com/api',
+  apiTree: 'https://jsonplaceholder.typicode.com'
 };
 
 /*

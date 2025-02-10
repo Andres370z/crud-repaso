@@ -7,8 +7,8 @@
                     aria-describedby="basic-addon1" (input)="onClick($event)">
             </div>
         </div>
-        <div class="col-4 mt-2 mb-2" *ngFor="let character of characters">
-            <app-fut-cart-info [character]="character"></app-fut-cart-info>
+        <div class="col-4 mt-2 mb-2" *ngFor="let public of publicaciones">
+            <app-fut-cart-info [publicaciones]="public"></app-fut-cart-info>
         </div>
     </div>
 </div>

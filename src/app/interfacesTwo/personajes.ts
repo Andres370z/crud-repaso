@@ -6,3 +6,14 @@ export interface FuturamaCharacters {
     species: string,
     image: string
 }
+
+
+export interface misPersonajes {
+    createdAt: string,
+    gender: string,
+    id: number,
+    image: string,
+    name: string,
+    status: string,
+    species: string,
+}
